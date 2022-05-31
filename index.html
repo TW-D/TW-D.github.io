@@ -22,23 +22,23 @@
 
             <div class="row mb-4">
                 <div class="col-5 text-center">
-                    <img class="img-fluid" src="./assets/img/globe.png" title="" alt="" />
+                    <img class="img-fluid globe" src="./assets/img/globe.png" title="" alt="" />
                 </div>
                 <div class="col-7 align-self-center text-warning">
-                    <small class="d-block">[ 0.000000 ] BIOS-provided physical RAM map:</small>      
-                    <small class="d-block">[ 0.000001 ] BIOS-APT: [mem 0X000DEADB33F-0x000DEADC0DE] usable</small>
-                    <small class="d-block">[ 0.000010 ] NX (Execute Disable) protection: active</small>
-                    <small class="d-block">[ 0.000011 ] secureboot: Secure boot enabled</small>
-                    <small class="d-block">[ 0.000100 ] Booting paravirtualized kernel on bare hardware</small>
-                    <small class="d-block">[ 0.000101 ] LSM: Security Framework initializing</small>
-                    <small class="d-block">[ 0.000110 ] AppArmor: AppArmor Filesystem Enabled</small>
-                    <small class="d-block">[ 0.000111 ] Spectre V1 : Mitigation: usercopy/swapgs barriers</small>
-                    <small class="d-block">[ 0.001000 ] Spectre V2 : Mitigation: Indirect Branch Prediction barrier</small>
-                    <small class="d-block">[ 0.001001 ] system 00:01: [io  0x0000-0xffff] has been reserved</small>
-                    <small class="d-block">[ 0.001010 ] Platform Keyring initialized</small>
-                    <small class="d-block">[ 0.001011 ] Asymmetric key parser 'x509' registered</small>
-                    <small class="d-block">[ 0.001100 ] systemd[1]: Detected architecture x86-64</small>
-                    <small class="d-block">[ 0.001101 ] systemd[1]: Set hostname to evil-corp</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000000 ] BIOS-provided physical RAM map:</small>      
+                    <small class="d-block" data-chaffle="en">[ 0.000001 ] BIOS-APT: [mem 0X000DEADB33F-0x000DEADC0DE] usable</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000010 ] NX (Execute Disable) protection: active</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000011 ] secureboot: Secure boot enabled</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000100 ] Booting paravirtualized kernel on bare hardware</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000101 ] LSM: Security Framework initializing</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000110 ] AppArmor: AppArmor Filesystem Enabled</small>
+                    <small class="d-block" data-chaffle="en">[ 0.000111 ] Spectre V1 : Mitigation: usercopy/swapgs barriers</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001000 ] Spectre V2 : Mitigation: Indirect Branch Prediction barrier</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001001 ] system 00:01: [io  0x0000-0xffff] has been reserved</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001010 ] Platform Keyring initialized</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001011 ] Asymmetric key parser 'x509' registered</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001100 ] systemd[1]: Detected architecture x86-64</small>
+                    <small class="d-block" data-chaffle="en">[ 0.001101 ] systemd[1]: Set hostname to evil-corp</small>
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="col-11">
-                        <span>HAK5 - Rubber Ducky : Payloads "Contributor" &#x1F4DD;</span>
+                        <span>HAK5 - Rubber Ducky : Payloads "Contributor" &#x1F4DD; &#x1F3C6;</span>
                         <div><a class="text-warning" href="https://github.com/hak5/usbrubberducky-payloads/tree/master/payloads/library/remote_access/win_winrm-backdoor" target="_blank" title="">Remote Access - "Microsoft Windows" WinRM Backdoor</a></div>
                         <hr />
                     </div>
@@ -134,6 +134,32 @@
 
         <footer class="mt-4">
         </footer>
+
+        <script type="text/javascript" src="./assets/js/chaffle.js"></script>
+
+        <script type="text/javascript">
+
+            var elements;
+            elements = document.querySelectorAll('[data-chaffle]');
+
+            elements.forEach(element => {
+
+                let chaffle;
+                chaffle = new Chaffle(
+                    element,
+                    {
+                        speed: 15,
+                        delay: 75
+                    }
+                );
+            
+                element.onmouseover = function() {
+                    chaffle.init();
+                }
+
+            });
+            
+        </script>
 
     </body>
     
